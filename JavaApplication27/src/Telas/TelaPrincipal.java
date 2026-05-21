@@ -39,14 +39,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblData = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mnMarcarConsulta = new javax.swing.JMenuItem();
+        mnConsultarHorarios = new javax.swing.JMenuItem();
+        mnExcluirConsulta = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        mnCadastrarMedico = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,16 +73,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Agenda");
 
-        jMenuItem1.setText("Marcar Consulta");
-        jMenu1.add(jMenuItem1);
+        mnMarcarConsulta.setText("Marcar Consulta");
+        mnMarcarConsulta.addActionListener(this::mnMarcarConsultaActionPerformed);
+        jMenu1.add(mnMarcarConsulta);
 
-        jMenuItem2.setText("Consultar Horarios");
-        jMenuItem2.addActionListener(this::jMenuItem2ActionPerformed);
-        jMenu1.add(jMenuItem2);
+        mnConsultarHorarios.setText("Consultar Horarios");
+        mnConsultarHorarios.addActionListener(this::mnConsultarHorariosActionPerformed);
+        jMenu1.add(mnConsultarHorarios);
 
-        jMenuItem3.setText("Excluir Consulta");
-        jMenuItem3.addActionListener(this::jMenuItem3ActionPerformed);
-        jMenu1.add(jMenuItem3);
+        mnExcluirConsulta.setText("Excluir Consulta");
+        mnExcluirConsulta.addActionListener(this::mnExcluirConsultaActionPerformed);
+        jMenu1.add(mnExcluirConsulta);
 
         jMenuBar1.add(jMenu1);
 
@@ -98,8 +99,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu3.setText("Medico");
 
-        jMenuItem6.setText("Cadastrar Medico");
-        jMenu3.add(jMenuItem6);
+        mnCadastrarMedico.setText("Cadastrar Medico");
+        jMenu3.add(mnCadastrarMedico);
 
         jMenuBar1.add(jMenu3);
 
@@ -142,13 +143,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnConsultarHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnConsultarHorariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnConsultarHorariosActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void mnExcluirConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnExcluirConsultaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_mnExcluirConsultaActionPerformed
+
+    private void mnMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnMarcarConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnMarcarConsultaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,13 +200,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JLabel lblData;
     public javax.swing.JLabel lblNome;
+    private javax.swing.JMenuItem mnCadastrarMedico;
+    private javax.swing.JMenuItem mnConsultarHorarios;
+    private javax.swing.JMenuItem mnExcluirConsulta;
+    private javax.swing.JMenuItem mnMarcarConsulta;
     // End of variables declaration//GEN-END:variables
 }

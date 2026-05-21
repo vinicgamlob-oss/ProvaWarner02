@@ -9,25 +9,28 @@
             <Property name="text" type="java.lang.String" value="Agenda"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="mnMarcarConsulta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Marcar Consulta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnMarcarConsultaActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="mnConsultarHorarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar Horarios"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnConsultarHorariosActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="mnExcluirConsulta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Excluir Consulta"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnExcluirConsultaActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -54,7 +57,7 @@
             <Property name="text" type="java.lang.String" value="Medico"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="mnCadastrarMedico">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastrar Medico"/>
               </Properties>
