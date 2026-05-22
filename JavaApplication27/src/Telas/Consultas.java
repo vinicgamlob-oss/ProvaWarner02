@@ -8,6 +8,10 @@ import dal.moduloConexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,20 +24,23 @@ public class Consultas extends javax.swing.JInternalFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
     
-    public Consultas() {
+    public Consultas() throws ParseException {
         initComponents();
          conexao = moduloConexao.connector();
     }
     
+
+    
      private void Agendar (){
-      String Sql = "INSERT INTO consultas (id_medico,id_paciente,data_horario) VALUES (?,?,?)";
+      String Sql = "INSERT INTO consultas (id_medico,id_paciente,data_consulta,hora_consulta) VALUES (?,?,?,?)";
       
       
         try{
             pst = conexao.prepareStatement(Sql);
             pst.setString(1,txtIDMedico.getText());
-            pst.setString(1,txtIDPaciente.getText());
-            pst.setString(1,txtHora.getText());
+            pst.setString(2,txtIDPaciente.getText());
+            pst.setString(3,txtData.getText());
+            pst.setString(4,txtHora.getText());
             int adicionado =   pst.executeUpdate();
                
             if(adicionado > 0 ){
@@ -67,18 +74,29 @@ public class Consultas extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         txtIDPaciente = new javax.swing.JTextField();
         txtIDMedico = new javax.swing.JTextField();
-        txtHora = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        txtData = new javax.swing.JFormattedTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtHora = new javax.swing.JFormattedTextField();
 
         jLabel1.setText("ID Paciente");
 
         jLabel2.setText("ID Medico");
 
-        jLabel3.setText("Data e Hora");
+        jLabel3.setText("Data ");
 
         txtIDPaciente.addActionListener(this::txtIDPacienteActionPerformed);
 
         jButton1.setText("Agendar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        jLabel4.setText("Hora");
+
+        try {
+            txtHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,23 +105,26 @@ public class Consultas extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton1)
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(46, 46, 46)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtIDMedico)
-                                .addComponent(txtIDPaciente)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton1)))
-                .addContainerGap(199, Short.MAX_VALUE))
+                                .addComponent(txtIDPaciente)
+                                .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                                .addComponent(txtHora))
+                            .addGap(1, 1, 1)))
+                    .addComponent(jLabel4))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,10 +140,14 @@ public class Consultas extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
                     .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -132,13 +157,19 @@ public class Consultas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDPacienteActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Agendar();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtHora;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JFormattedTextField txtData;
+    private javax.swing.JFormattedTextField txtHora;
     private javax.swing.JTextField txtIDMedico;
     private javax.swing.JTextField txtIDPaciente;
     // End of variables declaration//GEN-END:variables

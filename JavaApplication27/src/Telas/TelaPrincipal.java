@@ -179,7 +179,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnExcluirConsultaActionPerformed
 
     private void mnMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnMarcarConsultaActionPerformed
-        // TODO add your handling code here:
+        Consultas ct = new Consultas();
+        ct.setVisible(true);
+        desktop.add(ct);
     }//GEN-LAST:event_mnMarcarConsultaActionPerformed
 
     private void mnCadastrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadastrarMedicoActionPerformed
