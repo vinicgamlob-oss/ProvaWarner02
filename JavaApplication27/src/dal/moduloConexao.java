@@ -18,7 +18,7 @@ public class moduloConexao {
     java.sql.Connection conexao = null;
     String driver = "com.mysql.cj.jdbc.Driver";
     // Verifique se o nome do banco 'AulaDia2904' está idêntico no MySQL
-    String url = "jdbc:mysql://localhost:3306/AulaDia2904";
+    String url = "jdbc:mysql://localhost:3306/clinica_medica";
     
     String user = "root";
     String password = "admin123";

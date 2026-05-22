@@ -33,7 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         lblNome = new javax.swing.JLabel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        desktop = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblData = new javax.swing.JLabel();
@@ -43,24 +43,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnConsultarHorarios = new javax.swing.JMenuItem();
         mnExcluirConsulta = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        mnCadastrarPaciente = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        mnConsultarPaciente = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         mnCadastrarMedico = new javax.swing.JMenuItem();
+        mnConsultarMedico = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        mnUsuario = new javax.swing.JMenuItem();
+        mnConsultarUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblNome.setFont(new java.awt.Font("C059", 1, 14)); // NOI18N
         lblNome.setText("Nome");
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
+        desktop.setLayout(desktopLayout);
+        desktopLayout.setHorizontalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        desktopLayout.setVerticalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -89,20 +94,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Paciente");
 
-        jMenuItem4.setText("Cadrastrar novo Paciente");
-        jMenu2.add(jMenuItem4);
+        mnCadastrarPaciente.setText("Cadrastrar novo Paciente");
+        mnCadastrarPaciente.addActionListener(this::mnCadastrarPacienteActionPerformed);
+        jMenu2.add(mnCadastrarPaciente);
 
         jMenuItem5.setText("Historico de Consultas");
         jMenu2.add(jMenuItem5);
+
+        mnConsultarPaciente.setText("Consultar Pacientes");
+        mnConsultarPaciente.addActionListener(this::mnConsultarPacienteActionPerformed);
+        jMenu2.add(mnConsultarPaciente);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Medico");
 
         mnCadastrarMedico.setText("Cadastrar Medico");
+        mnCadastrarMedico.addActionListener(this::mnCadastrarMedicoActionPerformed);
         jMenu3.add(mnCadastrarMedico);
 
+        mnConsultarMedico.setText("Consultar Medico");
+        mnConsultarMedico.addActionListener(this::mnConsultarMedicoActionPerformed);
+        jMenu3.add(mnConsultarMedico);
+
         jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Usuario");
+
+        mnUsuario.setText("Cadastrar Usuarios");
+        mnUsuario.addActionListener(this::mnUsuarioActionPerformed);
+        jMenu4.add(mnUsuario);
+
+        mnConsultarUsuario.setText("Consultar Usuario");
+        mnConsultarUsuario.addActionListener(this::mnConsultarUsuarioActionPerformed);
+        jMenu4.add(mnConsultarUsuario);
+
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,7 +138,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(desktop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -127,7 +154,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(desktop)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
@@ -154,6 +181,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void mnMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnMarcarConsultaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnMarcarConsultaActionPerformed
+
+    private void mnCadastrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadastrarMedicoActionPerformed
+        CadastrarMedico medico = new CadastrarMedico();
+        medico.setVisible(true);
+        desktop.add(medico);
+    }//GEN-LAST:event_mnCadastrarMedicoActionPerformed
+
+    private void mnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnUsuarioActionPerformed
+        CadastrarUsuario usuario = new CadastrarUsuario();
+        usuario.setVisible(true);
+        desktop.add(usuario);
+    }//GEN-LAST:event_mnUsuarioActionPerformed
+
+    private void mnCadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadastrarPacienteActionPerformed
+        CadastrarPaciente paciente = new CadastrarPaciente();
+        paciente.setVisible(true);
+        desktop.add(paciente);
+    }//GEN-LAST:event_mnCadastrarPacienteActionPerformed
+
+    private void mnConsultarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnConsultarPacienteActionPerformed
+        ConsultarPaciente consultap = new ConsultarPaciente();
+        consultap.setVisible(true);
+        desktop.add(consultap);
+    }//GEN-LAST:event_mnConsultarPacienteActionPerformed
+
+    private void mnConsultarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnConsultarMedicoActionPerformed
+        ConsultarMedico cmedico = new ConsultarMedico();
+        cmedico.setVisible(true);
+        desktop.add(cmedico);
+    }//GEN-LAST:event_mnConsultarMedicoActionPerformed
+
+    private void mnConsultarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnConsultarUsuarioActionPerformed
+        ConsultarUsuario user = new ConsultarUsuario();
+        user.setVisible(true);
+        desktop.add(user);
+    }//GEN-LAST:event_mnConsultarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,20 +256,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane desktop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JLabel lblData;
     public javax.swing.JLabel lblNome;
     private javax.swing.JMenuItem mnCadastrarMedico;
+    private javax.swing.JMenuItem mnCadastrarPaciente;
     private javax.swing.JMenuItem mnConsultarHorarios;
+    private javax.swing.JMenuItem mnConsultarMedico;
+    private javax.swing.JMenuItem mnConsultarPaciente;
+    private javax.swing.JMenuItem mnConsultarUsuario;
     private javax.swing.JMenuItem mnExcluirConsulta;
     private javax.swing.JMenuItem mnMarcarConsulta;
+    private javax.swing.JMenuItem mnUsuario;
     // End of variables declaration//GEN-END:variables
 }
