@@ -4,6 +4,7 @@
  */
 package Telas;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -41,7 +42,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         mnMarcarConsulta = new javax.swing.JMenuItem();
         mnConsultarHorarios = new javax.swing.JMenuItem();
-        mnExcluirConsulta = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnCadastrarPaciente = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -58,11 +58,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblNome.setFont(new java.awt.Font("C059", 1, 14)); // NOI18N
         lblNome.setText("Nome");
 
+        desktop.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,10 +88,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnConsultarHorarios.addActionListener(this::mnConsultarHorariosActionPerformed);
         jMenu1.add(mnConsultarHorarios);
 
-        mnExcluirConsulta.setText("Excluir Consulta");
-        mnExcluirConsulta.addActionListener(this::mnExcluirConsultaActionPerformed);
-        jMenu1.add(mnExcluirConsulta);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Paciente");
@@ -99,6 +97,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.add(mnCadastrarPaciente);
 
         jMenuItem5.setText("Historico de Consultas");
+        jMenuItem5.addActionListener(this::jMenuItem5ActionPerformed);
         jMenu2.add(jMenuItem5);
 
         mnConsultarPaciente.setText("Consultar Pacientes");
@@ -138,7 +137,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(desktop)
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -171,17 +170,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnConsultarHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnConsultarHorariosActionPerformed
-        // TODO add your handling code here:
+      ConsultarHorarios ch = new ConsultarHorarios();
+      ch.setVisible(true);
+      desktop.add(ch);
+      
     }//GEN-LAST:event_mnConsultarHorariosActionPerformed
 
-    private void mnExcluirConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnExcluirConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnExcluirConsultaActionPerformed
-
     private void mnMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnMarcarConsultaActionPerformed
-        Consultas ct = new Consultas();
-        ct.setVisible(true);
-        desktop.add(ct);
+        try {
+            Consultas ct = new Consultas();
+            ct.setVisible(true);
+            desktop.add(ct);
+        } catch (ParseException ex) {
+            System.getLogger(TelaPrincipal.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_mnMarcarConsultaActionPerformed
 
     private void mnCadastrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadastrarMedicoActionPerformed
@@ -219,6 +221,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         user.setVisible(true);
         desktop.add(user);
     }//GEN-LAST:event_mnConsultarUsuarioActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        HistoricoDeConsultas hc = new HistoricoDeConsultas();
+        hc.setVisible(true);
+        desktop.add(hc);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,7 +283,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnConsultarMedico;
     private javax.swing.JMenuItem mnConsultarPaciente;
     private javax.swing.JMenuItem mnConsultarUsuario;
-    private javax.swing.JMenuItem mnExcluirConsulta;
     private javax.swing.JMenuItem mnMarcarConsulta;
     private javax.swing.JMenuItem mnUsuario;
     // End of variables declaration//GEN-END:variables
