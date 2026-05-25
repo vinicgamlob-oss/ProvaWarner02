@@ -43,6 +43,8 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 
 ### 🖥️ Abrindo e Executando no NetBeans
 
+1. **Clonando o Repositório:**
+2. Acesse o  link e  clone o repositorio
 3. **Abra o Apache NetBeans IDE**.
 4. No menu superior, vá em **File (Arquivo)** > **Open Project (Abrir Projeto)**.
 5. Navegue até a pasta onde você clonou o repositório e selecione o projeto **JavaApplication27**.
