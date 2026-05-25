@@ -1,7 +1,12 @@
 # 🚀 SISMED - Sistema Integrado de Gerenciamento para Clínicas Médicas
 
 
-
+## Autores
+* Ana Beatriz de Oliveira Elias 
+* Elisa da Silva Ortiz de Godoy 
+* Guilherme Paiva Bueno de Aquino 
+* Larissa dos Santos Oliveira 
+* Vinícius Gama Bittencourt Lobo  
 
 ## Sobre o Projeto
 
