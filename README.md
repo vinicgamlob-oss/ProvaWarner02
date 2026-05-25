@@ -1,0 +1,48 @@
+# 🚀 Nome do Seu Software
+
+
+## Sobre o Projeto
+
+Sismed (ou o nome do seu software): Sistema Integrado de Gerenciamento para Clínicas Médicas
+
+Uma solução completa e intuitiva desenvolvida para otimizar a gestão operacional de clínicas e consultórios de saúde. O software centraliza o controle de fluxos essenciais — como agendamento de consultas, históricos de atendimentos e gestão de pessoal — garantindo segurança de dados através de um sistema de autenticação robusto. Com foco na experiência do usuário, a plataforma conta com interfaces independentes e dedicadas para cada módulo, simplificando o cotidiano de secretários, médicos e administradores.
+
+## ⚙️ Funcionalidades
+
+- [ ] **Sistema de Autenticação:** Login seguro para controle de acesso de usuários e funcionários.
+- [ ] **Interfaces Independentes:** Telas dedicadas e exclusivas para cada módulo do sistema, melhorando a usabilidade.
+- [ ] **Gerenciamento de Pacientes (CRUD):** Cadastro, consulta, atualização e exclusão de dados pessoais e históricos dos pacientes.
+- [ ] **Gerenciamento de Funcionários e Médicos (CRUD):** Cadastro e controle completo de profissionais da saúde e equipe administrativa.
+- [ ] **Controle de Usuários (CRUD):** Administração de perfis com acesso ao sistema.
+- [ ] **Agendamento e Consulta de Horários:** Painel dinâmico para visualizar a agenda médica e marcar consultas de forma organizada.
+- [ ] **Módulo de Busca Avançada:** Telas específicas para a consulta rápida de pacientes, médicos, horários e usuários cadastrados.
+
+## 🛠️ Tecnologias Utilizadas
+
+As principais ferramentas e linguagens usadas no desenvolvimento:
+
+- **Linguagem:** Java
+- **Interface Gráfica (GUI):** Java Swing
+- **Banco de Dados:** MySQL
+- **Ambiente de Desenvolvimento (IDE):** NetBeans
+
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+* [Git](https://git-scm.com) (Para clonar e gerenciar o repositório)
+* [Apache NetBeans IDE](https://netbeans.apache.org/) 
+* [JDK (Java Development Kit)](https://www.oracle.com/java/technologies/downloads/) (Versão 17 ou superior, necessária para compilar o Java)
+* [MySQL Server](https://dev.mysql.com/downloads/installer/) 
+
+### 🤖 Passo a Passo
+
+### 🤖 Passo a Passo
+
+```bash
+# 1. Clone este repositório em sua máquina
+$ git clone [https://github.com/vinicgamlob-oss/ProvaWarner02.git](https://github.com/vinicgamlob-oss/ProvaWarner02.git)
+
+# 2. Acesse a pasta do projeto clonado (opcional, para conferir os arquivos)
+$ cd JavaApplication27
