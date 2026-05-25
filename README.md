@@ -41,9 +41,15 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 
 ### 🤖 Passo a Passo
 
-```bash
-# 1. Clone este repositório em sua máquina
-$ git clone [https://github.com/vinicgamlob-oss/ProvaWarner02.git](https://github.com/vinicgamlob-oss/ProvaWarner02.git)
+### 🖥️ Abrindo e Executando no NetBeans
 
-# 2. Acesse a pasta do projeto clonado (opcional, para conferir os arquivos)
-$ cd JavaApplication27
+3. **Abra o Apache NetBeans IDE**.
+4. No menu superior, vá em **File (Arquivo)** > **Open Project (Abrir Projeto)**.
+5. Navegue até a pasta onde você clonou o repositório e selecione o projeto **JavaApplication27**.
+
+6. **Configuração do Banco de Dados (MySQL):**
+   * Certifique-se de que o seu serviço do MySQL Server esteja ativo.
+   * Abra o seu gerenciador de banco de dados de preferência (MySQL Workbench, phpMyAdmin ou o próprio terminal).
+   * Importe e execute o script SQL que está localizado na pasta `/BancoDeDadosSql` deste repositório para criar o banco e as tabelas da clínica automaticamente.
+   * Se necessário, abra a classe de conexão no NetBeans e altere o usuário e a senha para corresponderem às credenciais do seu MySQL local.
+7. Pressione **F6** ou clique no botão **Run (Executar)** no topo da IDE para iniciar o sistema da clínica.
