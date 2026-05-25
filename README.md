@@ -41,8 +41,6 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 
 ### 🤖 Passo a Passo
 
-### 🖥️ Abrindo e Executando no NetBeans
-
 1. **Clonando o Repositório:**
  * Acesse o  link e  clone o repositorio
 2. **Abra o Apache NetBeans IDE**.
