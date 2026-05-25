@@ -33,7 +33,7 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 
 ### Pré-requisitos
 
-* [Git](https://git-scm.com) (Para clonar e gerenciar o repositório)
+* [Git](https://git-scm.com) 
 * [Apache NetBeans IDE](https://netbeans.apache.org/) 
 * [JDK (Java Development Kit)](https://www.oracle.com/java/technologies/downloads/) (Versão 17 ou superior, necessária para compilar o Java)
 * [MySQL Server](https://dev.mysql.com/downloads/installer/) 
