@@ -1,9 +1,11 @@
-# 🚀 Nome do Seu Software
+# 🚀 SISMED - Sistema Integrado de Gerenciamento para Clínicas Médicas
+
+
 
 
 ## Sobre o Projeto
 
-Sismed (ou o nome do seu software): Sistema Integrado de Gerenciamento para Clínicas Médicas
+Sismed : Sistema Integrado de Gerenciamento para Clínicas Médicas
 
 Uma solução completa e intuitiva desenvolvida para otimizar a gestão operacional de clínicas e consultórios de saúde. O software centraliza o controle de fluxos essenciais — como agendamento de consultas, históricos de atendimentos e gestão de pessoal — garantindo segurança de dados através de um sistema de autenticação robusto. Com foco na experiência do usuário, a plataforma conta com interfaces independentes e dedicadas para cada módulo, simplificando o cotidiano de secretários, médicos e administradores.
 
@@ -36,7 +38,6 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 * [JDK (Java Development Kit)](https://www.oracle.com/java/technologies/downloads/) (Versão 17 ou superior, necessária para compilar o Java)
 * [MySQL Server](https://dev.mysql.com/downloads/installer/) 
 
-### 🤖 Passo a Passo
 
 ### 🤖 Passo a Passo
 
