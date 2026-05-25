@@ -106,7 +106,7 @@ public class TelaLogin extends javax.swing.JFrame {
         lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema De Betinhas ");
+        setTitle("Login");
         setResizable(false);
 
         jLabel1.setText("Usuario");

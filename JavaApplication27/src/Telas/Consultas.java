@@ -83,7 +83,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Agenda Oline");
+        setTitle("Agenda Online");
 
         jLabel1.setText("ID Paciente");
 
