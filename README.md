@@ -42,7 +42,7 @@ As principais ferramentas e linguagens usadas no desenvolvimento:
 ### 🤖 Passo a Passo
 
 1. **Clonando o Repositório:**
- * Acesse o  link e  clone o repositorio
+ * Acesse o [LINK](https://github.com/vinicgamlob-oss/ProvaWarner02) e  clone o repositorio
 2. **Abra o Apache NetBeans IDE**.
  * No menu superior, vá em **File (Arquivo)** > **Open Project (Abrir Projeto)**.
  * Navegue até a pasta onde você clonou o repositório e selecione o projeto **JavaApplication27**.
