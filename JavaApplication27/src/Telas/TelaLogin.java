@@ -33,7 +33,9 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
         conexao = moduloConexao.connector();
         
-        //System.out.println(conexao);
+       definirIcone();
+       
+       
         
         if(conexao != null){
         lblStatus.setText("Conectado!");
@@ -44,6 +46,22 @@ public class TelaLogin extends javax.swing.JFrame {
         }
             
     }
+    
+    private void definirIcone() {
+    try {
+      java.net.URL urlIcone = getClass().getResource("../icons/LogoCM.png");
+        
+        if (urlIcone != null) {
+            javax.swing.ImageIcon icone = new javax.swing.ImageIcon(urlIcone);
+            this.setIconImage(icone.getImage());
+            System.out.println("SUCESSO: O ícone foi carregado pelo Java!");
+        } else {
+            System.out.println("Não foi possível encontrar o arquivo de imagem no pacote 'icones'.");
+        }
+    } catch (Exception e) {
+        System.out.println("Erro ao carregar o ícone: " + e.getMessage());
+    }
+}
       
         
         public void logar() {

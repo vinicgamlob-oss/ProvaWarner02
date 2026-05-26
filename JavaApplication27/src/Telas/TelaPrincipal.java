@@ -22,7 +22,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         exibirData();
+        definirIcone();
     }
+    
+
+private void definirIcone() {
+    try {
+        java.net.URL urlIcone = getClass().getResource("../icons/LogoCM.png");
+        
+        if (urlIcone != null) {
+            javax.swing.ImageIcon icone = new javax.swing.ImageIcon(urlIcone);
+            this.setIconImage(icone.getImage());
+        } else {
+            System.out.println("Não foi possível encontrar o arquivo de imagem no pacote 'icones'.");
+        }
+    } catch (Exception e) {
+        System.out.println("Erro ao carregar o ícone: " + e.getMessage());
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
