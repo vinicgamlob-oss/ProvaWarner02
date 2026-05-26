@@ -54,7 +54,6 @@ public class TelaLogin extends javax.swing.JFrame {
         if (urlIcone != null) {
             javax.swing.ImageIcon icone = new javax.swing.ImageIcon(urlIcone);
             this.setIconImage(icone.getImage());
-            System.out.println("SUCESSO: O ícone foi carregado pelo Java!");
         } else {
             System.out.println("Não foi possível encontrar o arquivo de imagem no pacote 'icones'.");
         }
@@ -125,6 +124,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("../icons/LogoCM.png")).getImage());
         setResizable(false);
 
         jLabel1.setText("Usuario");
