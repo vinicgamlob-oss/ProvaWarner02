@@ -67,8 +67,6 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         txtPacienteNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtPacienteTelefone = new javax.swing.JTextField();
         btnCadastrarPaciente = new javax.swing.JButton();
 
         setClosable(true);
@@ -79,8 +77,6 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
         jLabel1.setText("Nome ");
 
         txtPacienteNome.addActionListener(this::txtPacienteNomeActionPerformed);
-
-        jLabel2.setText("Telefone");
 
         btnCadastrarPaciente.setText("Cadastrar");
         btnCadastrarPaciente.addActionListener(this::btnCadastrarPacienteActionPerformed);
@@ -93,29 +89,20 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCadastrarPaciente)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtPacienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPacienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPacienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(88, 88, 88)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtPacienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPacienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(btnCadastrarPaciente)
                 .addContainerGap(100, Short.MAX_VALUE))
         );
@@ -135,8 +122,6 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarPaciente;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtPacienteNome;
-    private javax.swing.JTextField txtPacienteTelefone;
     // End of variables declaration//GEN-END:variables
 }
