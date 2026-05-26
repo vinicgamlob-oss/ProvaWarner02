@@ -1,0 +1,16 @@
+dbms,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CONSTRAINT_TYPE,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+mysql,clinica_medica,Usuarios,id_usuario,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,clinica_medica,Usuarios,nome,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,clinica_medica,Usuarios,tipo,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,clinica_medica,Usuarios,email,4,varchar,100,NULL,NULL,NULL,NULL
+mysql,clinica_medica,Usuarios,senha,5,varchar,255,NULL,NULL,NULL,NULL
+mysql,clinica_medica,consultas,id_consulta,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,clinica_medica,consultas,id_medico,2,int,NULL,"FOREIGN KEY",clinica_medica,medicos,id_medico
+mysql,clinica_medica,consultas,id_paciente,3,int,NULL,"FOREIGN KEY",clinica_medica,pacientes,id_paciente
+mysql,clinica_medica,consultas,data_consulta,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,clinica_medica,consultas,hora_consulta,5,time,NULL,NULL,NULL,NULL,NULL
+mysql,clinica_medica,medicos,id_medico,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,clinica_medica,medicos,nome,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,clinica_medica,medicos,especialidade,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,clinica_medica,pacientes,id_paciente,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,clinica_medica,pacientes,nome,2,varchar,100,NULL,NULL,NULL,NULL
