@@ -1,0 +1,41 @@
+## Tabela consultas 
+CREATE TABLE `consultas` (
+  `id_consulta` int NOT NULL AUTO_INCREMENT,
+  `id_medico` int NOT NULL,
+  `id_paciente` int NOT NULL,
+  `data_consulta` date NOT NULL,
+  `hora_consulta` time NOT NULL,
+  PRIMARY KEY (`id_consulta`),
+  KEY `id_medico` (`id_medico`),
+  KEY `id_paciente` (`id_paciente`),
+  CONSTRAINT `consultas_ibfk_1` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`id_medico`) ON DELETE CASCADE,
+  CONSTRAINT `consultas_ibfk_2` FOREIGN KEY (`id_paciente`) REFERENCES `pacientes` (`id_paciente`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+## Tabela médicos
+CREATE TABLE `medicos` (
+  `id_medico` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `especialidade` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_medico`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+## Tabela pacientes
+CREATE TABLE `pacientes` (
+  `id_paciente` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_paciente`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+##Tabela Usuario
+CREATE TABLE `Usuarios` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `tipo` varchar(100) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
