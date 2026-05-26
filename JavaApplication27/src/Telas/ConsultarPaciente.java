@@ -40,10 +40,10 @@ try {
     pst = conexao.prepareStatement(sql);
     rs = pst.executeQuery();
 
-    // Pegando o modelo da sua tabela Tbtelinha
+    
     DefaultTableModel model = (DefaultTableModel) tbConsultarPacientes.getModel();
     
-    // Limpa a tabela antes de preencher para não duplicar dados
+    
     model.setNumRows(0);
 
     while (rs.next()) {
@@ -55,7 +55,7 @@ try {
     }
 
 } catch (Exception e) {
-    // Usando o JOptionPane que corrigimos antes
+  
     JOptionPane.showMessageDialog(null, "Erro ao carregar tabela: " + e);
 }
     

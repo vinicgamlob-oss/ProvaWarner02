@@ -29,7 +29,7 @@ public class CadastrarUsuario extends javax.swing.JInternalFrame {
       String Sql = "INSERT INTO Usuarios (id_usuario,nome,tipo, email, senha) VALUES (?,?,?,?,?);";
       int num = 0;
       
-            if(num == 0){ num = num += num;}
+            if(num == 0){num += num;}
       
         try{
             pst = conexao.prepareStatement(Sql);

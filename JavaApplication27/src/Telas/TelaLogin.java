@@ -75,10 +75,9 @@ public class TelaLogin extends javax.swing.JFrame {
         pst.setString(1, txtUsuario.getText()); 
         pst.setString(2, txtSenha.getText());   
         
-        // 4. Executa a busca (Sem passar a string 'sql' aqui dentro!)
+        
         rs = pst.executeQuery();
 
-        // 5. O tratamento do resultado deve estar DENTRO do try
         if (rs.next()) {
            TelaPrincipal principal = new TelaPrincipal();
            principal.lblNome.setText(rs.getString(2));
@@ -93,7 +92,7 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         
     } catch (Exception e) {
-        // MUITO IMPORTANTE: Sempre imprima o erro para saber o que falhou
+        
         JOptionPane.showMessageDialog(null, "Erro na conexão: " + e);
     }
 }

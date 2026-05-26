@@ -39,10 +39,10 @@ try {
     pst = conexao.prepareStatement(sql);
     rs = pst.executeQuery();
 
-    // Pegando o modelo da sua tabela Tbtelinha
+    
     DefaultTableModel model = (DefaultTableModel) tbConsultarUsuarios.getModel();
     
-    // Limpa a tabela antes de preencher para não duplicar dados
+   
     model.setNumRows(0);
 
     while (rs.next()) {
@@ -57,7 +57,7 @@ try {
     }
 
 } catch (Exception e) {
-    // Usando o JOptionPane que corrigimos antes
+    
     JOptionPane.showMessageDialog(null, "Erro ao carregar tabela: " + e);
 }
     
@@ -67,19 +67,19 @@ try {
     }
      
      public void deletar() {
-    // No DELETE não se usa o "*"
+   
     String sql = "DELETE FROM Usuarios WHERE id_usuario = ?";
     
     try {
         pst = conexao.prepareStatement(sql);
         pst.setString(1, txtID.getText());
         
-        // Para comandos que alteram o banco (DELETE, UPDATE, INSERT), use executeUpdate
+       
         int apagado = pst.executeUpdate();
         
         if (apagado > 0) {
             JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
-            // Limpa o campo após deletar
+            
             txtID.setText(null);
             populaTable();
         }
