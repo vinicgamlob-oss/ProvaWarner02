@@ -146,6 +146,7 @@ try {
         setTitle("Consultar Usarios");
 
         btnDeletarUsuario.setText("Deletar");
+        btnDeletarUsuario.addActionListener(this::btnDeletarUsuarioActionPerformed);
 
         tbConsultarUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -268,6 +269,10 @@ try {
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         atualizar();
     }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnDeletarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuarioActionPerformed
+deletar();
+    }//GEN-LAST:event_btnDeletarUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
