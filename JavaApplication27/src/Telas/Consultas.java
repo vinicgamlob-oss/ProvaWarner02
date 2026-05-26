@@ -31,7 +31,7 @@ public class Consultas extends javax.swing.JInternalFrame {
     
 
     
-     private void Agendar (){
+     private void cadastrar (){
       String Sql = "INSERT INTO consultas (id_medico,id_paciente,data_consulta,hora_consulta) VALUES (?,?,?,?)";
       
       
@@ -176,7 +176,7 @@ public class Consultas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtIDPacienteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Agendar();
+        cadastrar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
