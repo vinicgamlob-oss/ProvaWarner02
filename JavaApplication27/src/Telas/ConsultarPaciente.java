@@ -65,19 +65,19 @@ try {
     }
      
      public void deletar() {
-    // No DELETE não se usa o "*"
+    
     String sql = "DELETE FROM pacientes WHERE id_paciente = ?";
     
     try {
         pst = conexao.prepareStatement(sql);
         pst.setString(1, txtID.getText());
         
-        // Para comandos que alteram o banco (DELETE, UPDATE, INSERT), use executeUpdate
+        
         int apagado = pst.executeUpdate();
         
         if (apagado > 0) {
             JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
-            // Limpa o campo após deletar
+           
             txtID.setText(null);
             populaTable();
         }
@@ -86,6 +86,27 @@ try {
         JOptionPane.showMessageDialog(null, e);
     }
 }
+     
+      public void atualizar() {
+    String sql = "UPDATE pacientes SET nome = ?  WHERE id_paciente = ?";
+    
+    try {
+        pst = conexao.prepareStatement(sql);
+        
+        pst.setString(1, txtNome.getText());
+        pst.setString(2, txtID.getText());
+        int adicionado = pst.executeUpdate();
+        
+        if (adicionado > 0) {
+            JOptionPane.showMessageDialog(null, "Dados do medico alterados com sucesso!");
+            populaTable();
+        }
+        
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
+}
+    
 
 
     /**
@@ -99,8 +120,12 @@ try {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tbConsultarPacientes = new javax.swing.JTable();
-        btnDeletarPaciente = new javax.swing.JButton();
+        btnDeletarUsuario = new javax.swing.JButton();
         txtID = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btnAtualizar = new javax.swing.JButton();
+        txtNome = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
@@ -120,8 +145,17 @@ try {
         ));
         jScrollPane1.setViewportView(tbConsultarPacientes);
 
-        btnDeletarPaciente.setText("Deletar");
-        btnDeletarPaciente.addActionListener(this::btnDeletarPacienteActionPerformed);
+        btnDeletarUsuario.setText("Deletar");
+        btnDeletarUsuario.addActionListener(this::btnDeletarUsuarioActionPerformed);
+
+        jLabel4.setText("Nome : ");
+
+        jLabel1.setText("ID :");
+
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(this::btnAtualizarActionPerformed);
+
+        txtNome.addActionListener(this::txtNomeActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,12 +163,23 @@ try {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeletarPaciente))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNome)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAtualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDeletarUsuario)))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,25 +187,45 @@ try {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDeletarPaciente)
+                    .addComponent(jLabel1)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeletarUsuario)
+                    .addComponent(btnAtualizar))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDeletarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarPacienteActionPerformed
+    private void btnDeletarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuarioActionPerformed
         deletar();
-    }//GEN-LAST:event_btnDeletarPacienteActionPerformed
+    }//GEN-LAST:event_btnDeletarUsuarioActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        atualizar();
+    }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeletarPaciente;
+    private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnDeletarUsuario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbConsultarPacientes;
     private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
